@@ -1,0 +1,163 @@
+/* ============================================================
+   HARMONY FAMILY CLINIC — responsive.css
+   Mobile-first breakpoints | Pure Vanilla CSS
+   ============================================================ */
+
+/* ── LARGE DESKTOP (max 1280px) ── */
+@media (max-width: 1280px) {
+  :root { --container: 1100px; }
+}
+
+/* ── LAPTOP (max 1024px) ── */
+@media (max-width: 1024px) {
+  :root { --section-py: 5rem; }
+
+  /* Nav */
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+
+  /* Hero */
+  .hero { padding-top: 5rem; }
+  .hero-title { font-size: clamp(2.8rem, 5vw, 4rem); }
+
+  /* Services */
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Doctors */
+  .doctors-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Stats */
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Why Us */
+  .why-us-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .why-us-left { position: static; }
+
+  /* Book */
+  .book-wrapper { grid-template-columns: 1fr; }
+  .book-content { padding: 3rem 2.5rem; }
+  .book-form-wrap { padding: 2.5rem; }
+
+  /* Resources */
+  .resources-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* FAQ */
+  .faq-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .faq-left { position: static; }
+
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+
+/* ── TABLET (max 768px) ── */
+@media (max-width: 768px) {
+  :root { --section-py: 4rem; }
+
+  .container { padding: 0 1.25rem; }
+
+  /* Hero */
+  .hero-title { font-size: 2.5rem; line-height: 1.1; }
+  .hero-sub { font-size: 1.05rem; }
+  .hero-btns { flex-direction: column; width: 100%; }
+  .hero-btns .btn { width: 100%; justify-content: center; }
+  .trust-badges { gap: 1.25rem; }
+
+  /* Services */
+  .services-grid { grid-template-columns: 1fr; }
+
+  /* Doctors */
+  .doctors-grid { grid-template-columns: 1fr; }
+
+  /* Stats */
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .stat-number { font-size: 3rem; }
+
+  /* Why Us */
+  .feature-card { padding: 1.5rem; }
+
+  /* Book */
+  .book-content { padding: 2.5rem 1.75rem; }
+  .book-form-wrap { padding: 1.75rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .book-content h2 { font-size: 2rem; }
+
+  /* Testimonials */
+  .testimonial-card { padding: 2rem 1.5rem; }
+  .review-text { font-size: 1.05rem; }
+
+  /* Resources */
+  .resources-grid { grid-template-columns: 1fr; }
+
+  /* FAQ */
+  .accordion-btn { padding: 1rem 1.25rem; font-size: 0.925rem; }
+  .accordion-body { padding: 0 1.25rem; font-size: 0.9rem; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  .footer-legal { justify-content: center; }
+
+  /* Floating CTA */
+  .floating-cta { bottom: 1.25rem; right: 1.25rem; padding: 0.75rem 1.25rem; font-size: 0.85rem; }
+  .floating-cta span { display: none; }
+}
+
+/* ── MOBILE (max 480px) ── */
+@media (max-width: 480px) {
+  :root { --section-py: 3rem; }
+
+  /* Navbar */
+  .navbar { padding: 0.9rem 0; }
+  .logo-name { font-size: 1rem; }
+
+  /* Hero */
+  .hero { padding-top: 4.5rem; min-height: auto; padding-bottom: 3rem; }
+  .hero-title { font-size: 2.1rem; }
+  .trust-badges { flex-direction: column; gap: 0.9rem; }
+  .hero-badge { font-size: 0.8rem; }
+  .blob { filter: blur(40px); opacity: 0.3; }
+  .hero-deco { display: none; }
+
+  /* Section Titles */
+  .section-title { font-size: 1.9rem; }
+
+  /* Stat */
+  .stat-number { font-size: 2.5rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .stat-item { padding: 1.25rem 0.5rem; }
+
+  /* Doctor card */
+  .doctor-img-wrap { height: 240px; }
+
+  /* Book form */
+  .book-wrapper { border-radius: var(--radius-lg); }
+  .book-content h2 { font-size: 1.75rem; }
+
+  /* Testimonials */
+  .reviewer { flex-wrap: wrap; }
+  .stars { margin-left: 0; width: 100%; }
+
+  /* Contact */
+  .contact-card { flex-direction: column; gap: 0.75rem; }
+  .contact-icon { width: 40px; height: 40px; }
+
+  /* Accordion */
+  .accordion-btn { font-size: 0.9rem; }
+
+  /* Mobile menu panel */
+  .mobile-menu-panel { padding: 5rem 1.75rem 2rem; }
+  .mobile-link { font-size: 1.5rem; }
+}
+
+/* ── PRINT ── */
+@media print {
+  .loader, .navbar, .hamburger, .mobile-menu,
+  .floating-cta, .hero-deco, .blob { display: none !important; }
+  body { color: #000; background: #fff; }
+  .hero { min-height: auto; padding-top: 2rem; }
+  a { color: #000; }
+}

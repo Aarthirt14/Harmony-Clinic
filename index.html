@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harmony Family Clinic – Healthcare Your Family Can Trust</title>
+  <meta name="description" content="Book same-day appointments with experienced doctors at Harmony Family Clinic. Serving families for 15+ years with general consultation, pediatrics, women's health, chronic disease management, and more." />
+  <meta property="og:title" content="Harmony Family Clinic – Healthcare Your Family Can Trust" />
+  <meta property="og:description" content="Premium family healthcare for every stage of life. Book your appointment today." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ========== LOADING SCREEN ========== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <div class="loader-cross">
+          <span></span><span></span>
+        </div>
+        <span class="loader-brand">Harmony</span>
+      </div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <!-- Logo -->
+      <a href="#" class="logo" id="logo-home" aria-label="Harmony Family Clinic home">
+        <div class="logo-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2L12 22M2 12L22 12"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Harmony</span>
+          <span class="logo-sub">Family Clinic</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#doctors" class="nav-link">Doctors</a>
+        <a href="#why-us" class="nav-link">Why Us</a>
+        <a href="#resources" class="nav-link">Resources</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav CTA -->
+      <div class="nav-cta">
+        <a href="tel:+18005550227" class="nav-phone">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.64 3.18 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6.91 6.91l.81-.81a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +1 (800) 555-CARE
+        </a>
+        <button class="btn btn-primary btn-sm" id="nav-book-btn">Book Appointment</button>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+    <div class="mobile-menu-overlay" id="mobile-overlay"></div>
+    <div class="mobile-menu-panel">
+      <button class="mobile-close" id="mobile-close" aria-label="Close navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="#services" class="mobile-link">Services</a>
+        <a href="#doctors" class="mobile-link">Doctors</a>
+        <a href="#why-us" class="mobile-link">Why Us</a>
+        <a href="#resources" class="mobile-link">Resources</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+      </nav>
+      <button class="btn btn-primary btn-lg w-full" id="mobile-book-btn">Book Appointment</button>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <!-- Background blobs -->
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
+      <div class="blob blob-3" aria-hidden="true"></div>
+
+      <!-- Floating medical icons -->
+      <div class="hero-deco deco-cross-1" aria-hidden="true">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H14V8H9V3H5a2 2 0 00-2 2v4H0v4h3v4a2 2 0 002 2h4v3h4v-3h4a2 2 0 002-2v-4h3V9h-3V5a2 2 0 00-2-2z" opacity="0.35"/></svg>
+      </div>
+      <div class="hero-deco deco-cross-2" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H14V8H9V3H5a2 2 0 00-2 2v4H0v4h3v4a2 2 0 002 2h4v3h4v-3h4a2 2 0 002-2v-4h3V9h-3V5a2 2 0 00-2-2z"/></svg>
+      </div>
+      <div class="hero-deco deco-circle" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" opacity="0.3"/></svg>
+      </div>
+
+      <div class="container hero-content">
+        <!-- Badge -->
+        <div class="hero-badge reveal-up">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span>Accepting New Patients</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 id="hero-heading" class="hero-title reveal-up reveal-delay-1">
+          Healthcare Your<br>
+          <em class="hero-accent">Family</em> Can Trust
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="hero-sub reveal-up reveal-delay-2">
+          Providing compassionate and comprehensive healthcare services for every stage of life — from newborn to golden years.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-btns reveal-up reveal-delay-3">
+          <button class="btn btn-primary btn-lg" id="hero-book-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book Appointment
+          </button>
+          <a href="tel:+18005550227" class="btn btn-outline btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.64 3.18 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6.91 6.91l.81-.81a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Clinic
+          </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="trust-badges reveal-up reveal-delay-4">
+          <div class="trust-badge">
+            <div class="trust-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <span>15+ Years Experience</span>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <span>10,000+ Patients Served</span>
+          </div>
+          <div class="trust-badge">
+            <div class="trust-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <span>Same-Day Appointments</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom fade -->
+      <div class="hero-fade" aria-hidden="true"></div>
+    </section>
+
+    <!-- ========== SERVICES ========== -->
+    <section class="services section" id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">Our Specialties</span>
+          <h2 id="services-heading" class="section-title">Comprehensive Care<br>for Everyone</h2>
+          <p class="section-sub">We offer a wide range of medical services designed to keep your whole family healthy at every stage of life.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal-up" tabindex="0">
+            <div class="service-icon-wrap" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3>General Consultation</h3>
+            <p>Expert medical advice and treatment for common illnesses, preventive care, and ongoing health management.</p>
+            <a href="#book" class="service-link">Learn more <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="service-card reveal-up reveal-delay-1" tabindex="0">
+            <div class="service-icon-wrap" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+            </div>
+            <h3>Child Healthcare</h3>
+            <p>Pediatric care ensuring healthy development, well-child visits, immunizations and growth monitoring.</p>
+            <a href="#book" class="service-link">Learn more <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="service-card reveal-up reveal-delay-2" tabindex="0">
+            <div class="service-icon-wrap" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3>Women's Health</h3>
+            <p>Specialized healthcare services tailored for women at all stages of life — OB/GYN, hormonal, and preventive care.</p>
+            <a href="#book" class="service-link">Learn more <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="service-card reveal-up" tabindex="0">
+            <div class="service-icon-wrap" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 12l-5-5-4 4-3-3"/></svg>
+            </div>
+            <h3>Vaccinations</h3>
+            <p>Comprehensive immunization programs for all ages to protect against preventable diseases.</p>
+            <a href="#book" class="service-link">Learn more <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="service-card reveal-up reveal-delay-1" tabindex="0">
+            <div class="service-icon-wrap" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+            </div>
+            <h3>Health Checkups</h3>
+            <p>Routine physical exams, blood work, and screenings to maintain your optimal health and detect risks early.</p>
+            <a href="#book" class="service-link">Learn more <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="service-card reveal-up reveal-delay-2" tabindex="0">
+            <div class="service-icon-wrap" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </div>
+            <h3>Chronic Disease Management</h3>
+            <p>Ongoing care and support for managing diabetes, hypertension, asthma, and other long-term conditions.</p>
+            <a href="#book" class="service-link">Learn more <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DOCTORS ========== -->
+    <section class="doctors section section-dark" id="doctors" aria-labelledby="doctors-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label label-light">Meet The Team</span>
+          <h2 id="doctors-heading" class="section-title">Expert Minds.<br>Compassionate Hearts.</h2>
+          <p class="section-sub light">Our board-certified physicians bring decades of experience and genuine care to every patient interaction.</p>
+        </div>
+
+        <!-- Doctor Search -->
+        <div class="doctor-search reveal-up">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="doctor-search" placeholder="Search doctors by name or specialty…" aria-label="Search doctors by name or specialty" />
+        </div>
+
+        <div class="doctors-grid" id="doctors-grid">
+          <article class="doctor-card reveal-up" data-name="dr. sarah jenkins" data-spec="general medicine chief medical officer">
+            <div class="doctor-img-wrap">
+              <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600" alt="Dr. Sarah Jenkins, Chief Medical Officer" loading="lazy" width="400" height="400" />
+            </div>
+            <div class="doctor-info">
+              <h3>Dr. Sarah Jenkins</h3>
+              <p class="doctor-spec">Chief Medical Officer</p>
+              <div class="doctor-meta">
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> MD, Harvard Medical School</span>
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 18 Years Experience</span>
+              </div>
+              <button class="btn btn-ghost btn-sm" onclick="scrollToSection('#book')">Book Visit</button>
+            </div>
+          </article>
+
+          <article class="doctor-card reveal-up reveal-delay-1" data-name="dr. michael chen" data-spec="pediatrics child healthcare">
+            <div class="doctor-img-wrap">
+              <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=600" alt="Dr. Michael Chen, Pediatrician" loading="lazy" width="400" height="400" />
+            </div>
+            <div class="doctor-info">
+              <h3>Dr. Michael Chen</h3>
+              <p class="doctor-spec">Pediatrician</p>
+              <div class="doctor-meta">
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> MD, Stanford University</span>
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 12 Years Experience</span>
+              </div>
+              <button class="btn btn-ghost btn-sm" onclick="scrollToSection('#book')">Book Visit</button>
+            </div>
+          </article>
+
+          <article class="doctor-card reveal-up reveal-delay-2" data-name="dr. emily roberts" data-spec="women's health gynecology obstetrics">
+            <div class="doctor-img-wrap">
+              <img src="https://images.unsplash.com/photo-1594824436951-7f12bcceea15?auto=format&fit=crop&q=80&w=600" alt="Dr. Emily Roberts, Women's Health Specialist" loading="lazy" width="400" height="400" />
+            </div>
+            <div class="doctor-info">
+              <h3>Dr. Emily Roberts</h3>
+              <p class="doctor-spec">Women's Health Specialist</p>
+              <div class="doctor-meta">
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> MD, Johns Hopkins</span>
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 15 Years Experience</span>
+              </div>
+              <button class="btn btn-ghost btn-sm" onclick="scrollToSection('#book')">Book Visit</button>
+            </div>
+          </article>
+        </div>
+        <p class="no-results" id="no-results" aria-live="polite" hidden>No doctors found matching your search.</p>
+      </div>
+    </section>
+
+    <!-- ========== STATS ========== -->
+    <section class="stats section" id="stats" aria-label="Clinic statistics">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item reveal-up">
+            <span class="stat-number" data-target="15" data-suffix="+">0</span>
+            <span class="stat-label">Years of Excellence</span>
+          </div>
+          <div class="stat-item reveal-up reveal-delay-1">
+            <span class="stat-number" data-target="10000" data-suffix="+">0</span>
+            <span class="stat-label">Patients Served</span>
+          </div>
+          <div class="stat-item reveal-up reveal-delay-2">
+            <span class="stat-number" data-target="98" data-suffix="%">0</span>
+            <span class="stat-label">Patient Satisfaction</span>
+          </div>
+          <div class="stat-item reveal-up reveal-delay-3">
+            <span class="stat-number" data-target="12" data-suffix="">0</span>
+            <span class="stat-label">Expert Physicians</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHY US ========== -->
+    <section class="why-us section section-alt" id="why-us" aria-labelledby="why-us-heading">
+      <div class="container">
+        <div class="why-us-layout">
+          <div class="why-us-left">
+            <span class="section-label reveal-up">Why Choose Us</span>
+            <h2 id="why-us-heading" class="section-title reveal-up">Why Families<br>Choose Harmony</h2>
+            <p class="section-sub reveal-up">We combine advanced medical technology with a warm, personalized approach to ensure you receive the highest standard of care.</p>
+            <button class="btn btn-primary btn-lg reveal-up" onclick="scrollToSection('#book')">Experience the Difference</button>
+          </div>
+          <div class="why-us-right">
+            <div class="feature-card reveal-up">
+              <div class="feature-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div>
+                <h3>Experienced Medical Team</h3>
+                <p>Board-certified doctors with decades of combined experience across various specialties.</p>
+              </div>
+            </div>
+            <div class="feature-card reveal-up reveal-delay-1">
+              <div class="feature-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <div>
+                <h3>Modern Equipment</h3>
+                <p>State-of-the-art diagnostic tools and medical technologies for accurate and efficient care.</p>
+              </div>
+            </div>
+            <div class="feature-card reveal-up reveal-delay-2">
+              <div class="feature-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <div>
+                <h3>Personalized Care</h3>
+                <p>We take time to listen, understand, and tailor treatments to your unique health needs and goals.</p>
+              </div>
+            </div>
+            <div class="feature-card reveal-up reveal-delay-3">
+              <div class="feature-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <div>
+                <h3>Convenient Scheduling</h3>
+                <p>Flexible booking options, minimal wait times, and same-day appointments for urgent needs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== BOOK APPOINTMENT ========== -->
+    <section class="book section" id="book" aria-labelledby="book-heading">
+      <div class="container">
+        <div class="book-wrapper reveal-up">
+          <div class="book-content">
+            <h2 id="book-heading">Ready to prioritize<br>your health?</h2>
+            <p>Schedule your visit today and take the first step towards a healthier tomorrow. Our team is here for you.</p>
+            <ul class="book-perks" aria-label="Appointment benefits">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Same-day appointments available
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                No referral needed for most services
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Most insurance plans accepted
+              </li>
+            </ul>
+          </div>
+          <div class="book-form-wrap">
+            <form class="book-form" id="book-form" novalidate>
+              <div class="form-group">
+                <label for="f-name">Full Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="f-name" name="name" placeholder="John Doe" required autocomplete="name" />
+                <span class="form-error" id="err-name" role="alert"></span>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="f-phone">Phone Number <span aria-hidden="true">*</span></label>
+                  <input type="tel" id="f-phone" name="phone" placeholder="(555) 000-0000" required autocomplete="tel" />
+                  <span class="form-error" id="err-phone" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label for="f-email">Email Address</label>
+                  <input type="email" id="f-email" name="email" placeholder="john@example.com" autocomplete="email" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="f-service">Service Needed <span aria-hidden="true">*</span></label>
+                <select id="f-service" name="service" required>
+                  <option value="" disabled selected>Select a service…</option>
+                  <option value="general">General Consultation</option>
+                  <option value="child">Child Healthcare</option>
+                  <option value="women">Women's Health</option>
+                  <option value="vaccine">Vaccinations</option>
+                  <option value="checkup">Health Checkup</option>
+                  <option value="chronic">Chronic Disease Management</option>
+                </select>
+                <span class="form-error" id="err-service" role="alert"></span>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="f-date">Preferred Date <span aria-hidden="true">*</span></label>
+                  <input type="date" id="f-date" name="date" required />
+                  <span class="form-error" id="err-date" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label for="f-time">Preferred Time</label>
+                  <select id="f-time" name="time">
+                    <option value="">Any time</option>
+                    <option value="morning">Morning (8am–12pm)</option>
+                    <option value="afternoon">Afternoon (12pm–5pm)</option>
+                    <option value="evening">Evening (5pm–8pm)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="f-notes">Additional Notes</label>
+                <textarea id="f-notes" name="notes" rows="3" placeholder="Describe your symptoms or any questions…"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg w-full" id="submit-btn">
+                <span class="btn-label">Confirm Appointment</span>
+                <span class="btn-spinner" aria-hidden="true"></span>
+              </button>
+            </form>
+            <div class="form-success" id="form-success" hidden role="status">
+              <div class="success-icon" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h3>Appointment Request Sent!</h3>
+              <p>We'll contact you within 2 hours to confirm your appointment. See you soon!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="testimonials section section-alt" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">Patient Stories</span>
+          <h2 id="testimonials-heading" class="section-title">Hear From Our<br>Community</h2>
+        </div>
+        <div class="testimonials-track" id="testimonials-track" role="list">
+          <article class="testimonial-card" role="listitem">
+            <div class="quote-icon" aria-hidden="true">"</div>
+            <p class="review-text">The doctors at Harmony Family Clinic are incredibly attentive. I always feel heard and respected. Dr. Jenkins has been our family doctor for 6 years and we couldn't be happier.</p>
+            <div class="reviewer">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150" alt="Eleanor Richards" loading="lazy" width="56" height="56" />
+              <div>
+                <h4>Eleanor Richards</h4>
+                <p>Patient since 2019</p>
+              </div>
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            </div>
+          </article>
+          <article class="testimonial-card" role="listitem">
+            <div class="quote-icon" aria-hidden="true">"</div>
+            <p class="review-text">Outstanding pediatric care. Dr. Chen is phenomenal with my kids, making them feel at ease. The clinic's environment is welcoming and pristine. Highly recommend!</p>
+            <div class="reviewer">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150" alt="David Thompson" loading="lazy" width="56" height="56" />
+              <div>
+                <h4>David Thompson</h4>
+                <p>Patient since 2021</p>
+              </div>
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            </div>
+          </article>
+          <article class="testimonial-card" role="listitem">
+            <div class="quote-icon" aria-hidden="true">"</div>
+            <p class="review-text">Booking an appointment is seamless, the medical staff is top-notch. It truly feels like a premium healthcare experience. My whole family comes here now.</p>
+            <div class="reviewer">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150" alt="Sophia Martinez" loading="lazy" width="56" height="56" />
+              <div>
+                <h4>Sophia Martinez</h4>
+                <p>Patient since 2023</p>
+              </div>
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            </div>
+          </article>
+          <article class="testimonial-card" role="listitem">
+            <div class="quote-icon" aria-hidden="true">"</div>
+            <p class="review-text">I had a same-day appointment for my son's fever and they handled it with such professionalism. This clinic is a gem. Compassionate, skilled, and efficient.</p>
+            <div class="reviewer">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="James Patel" loading="lazy" width="56" height="56" />
+              <div>
+                <h4>James Patel</h4>
+                <p>Patient since 2022</p>
+              </div>
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            </div>
+          </article>
+        </div>
+        <!-- Slider controls -->
+        <div class="testimonials-controls" aria-label="Testimonial navigation">
+          <button class="testi-btn" id="testi-prev" aria-label="Previous testimonial">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="testi-dots" id="testi-dots" aria-label="Testimonial position indicators"></div>
+          <button class="testi-btn" id="testi-next" aria-label="Next testimonial">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== RESOURCES ========== -->
+    <section class="resources section" id="resources" aria-labelledby="resources-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">Health Resources</span>
+          <h2 id="resources-heading" class="section-title">Latest Health<br>Insights</h2>
+          <p class="section-sub">Stay informed with expert health articles from our medical team.</p>
+        </div>
+        <div class="resources-grid">
+          <article class="resource-card reveal-up">
+            <div class="resource-img">
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600" alt="Nutrition and wellness tips" loading="lazy" width="400" height="240" />
+              <span class="resource-tag">Nutrition</span>
+            </div>
+            <div class="resource-body">
+              <time class="resource-date" datetime="2024-05-01">May 1, 2024</time>
+              <h3>5 Foods That Naturally Boost Your Immunity</h3>
+              <p>Discover the power of whole foods in strengthening your body's natural defense system.</p>
+              <a href="#" class="resource-link">Read Article <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="resource-card reveal-up reveal-delay-1">
+            <div class="resource-img">
+              <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&q=80&w=600" alt="Mental health and wellness" loading="lazy" width="400" height="240" />
+              <span class="resource-tag">Mental Health</span>
+            </div>
+            <div class="resource-body">
+              <time class="resource-date" datetime="2024-04-20">Apr 20, 2024</time>
+              <h3>Understanding Stress: Signs, Causes & Management</h3>
+              <p>Learn how to recognize stress symptoms and adopt healthy coping strategies for lasting well-being.</p>
+              <a href="#" class="resource-link">Read Article <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="resource-card reveal-up reveal-delay-2">
+            <div class="resource-img">
+              <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=600" alt="Child health and development" loading="lazy" width="400" height="240" />
+              <span class="resource-tag">Pediatrics</span>
+            </div>
+            <div class="resource-body">
+              <time class="resource-date" datetime="2024-04-10">Apr 10, 2024</time>
+              <h3>Your Child's Vaccination Schedule: A Parent's Guide</h3>
+              <p>Everything parents need to know about immunization timelines and why they matter for lifelong health.</p>
+              <a href="#" class="resource-link">Read Article <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="faq section section-alt" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="faq-layout">
+          <div class="faq-left reveal-up">
+            <span class="section-label">FAQ</span>
+            <h2 id="faq-heading" class="section-title">Frequently Asked<br>Questions</h2>
+            <p>Have more questions? Our team is always happy to help.</p>
+            <a href="#contact" class="btn btn-outline btn-lg" onclick="scrollToSection('#contact'); return false;">Contact Us</a>
+          </div>
+          <div class="faq-right">
+            <div class="accordion" id="faq-accordion">
+              <div class="accordion-item reveal-up">
+                <button class="accordion-btn" aria-expanded="false" id="faq-1-btn" aria-controls="faq-1-panel">
+                  <span>How do I book an appointment?</span>
+                  <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="accordion-panel" id="faq-1-panel" role="region" aria-labelledby="faq-1-btn">
+                  <div class="accordion-body">You can book an appointment using our online form above, call us at +1 (800) 555-CARE, or visit the clinic in person during working hours. We offer same-day appointments for urgent needs.</div>
+                </div>
+              </div>
+              <div class="accordion-item reveal-up reveal-delay-1">
+                <button class="accordion-btn" aria-expanded="false" id="faq-2-btn" aria-controls="faq-2-panel">
+                  <span>What insurance plans do you accept?</span>
+                  <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="accordion-panel" id="faq-2-panel" role="region" aria-labelledby="faq-2-btn">
+                  <div class="accordion-body">We accept most major insurance plans including BlueCross BlueShield, Aetna, UnitedHealth, Cigna, and Medicare. Please contact our office to verify your specific plan before your visit.</div>
+                </div>
+              </div>
+              <div class="accordion-item reveal-up reveal-delay-2">
+                <button class="accordion-btn" aria-expanded="false" id="faq-3-btn" aria-controls="faq-3-panel">
+                  <span>Do you offer telehealth consultations?</span>
+                  <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="accordion-panel" id="faq-3-panel" role="region" aria-labelledby="faq-3-btn">
+                  <div class="accordion-body">Yes! We offer secure video consultations for follow-up appointments, prescription renewals, and non-emergency consultations. Ask our team to set up a virtual visit during booking.</div>
+                </div>
+              </div>
+              <div class="accordion-item reveal-up reveal-delay-3">
+                <button class="accordion-btn" aria-expanded="false" id="faq-4-btn" aria-controls="faq-4-panel">
+                  <span>What should I bring to my first visit?</span>
+                  <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="accordion-panel" id="faq-4-panel" role="region" aria-labelledby="faq-4-btn">
+                  <div class="accordion-body">Please bring a valid photo ID, your insurance card, a list of current medications, any relevant medical records or referrals, and completed new patient forms (available on our website or at the front desk).</div>
+                </div>
+              </div>
+              <div class="accordion-item reveal-up reveal-delay-4">
+                <button class="accordion-btn" aria-expanded="false" id="faq-5-btn" aria-controls="faq-5-panel">
+                  <span>Do you handle medical emergencies?</span>
+                  <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="accordion-panel" id="faq-5-panel" role="region" aria-labelledby="faq-5-btn">
+                  <div class="accordion-body">For life-threatening emergencies, please call 911 immediately. For urgent but non-life-threatening conditions, contact our clinic directly at +1 (800) 555-CARE — we have dedicated urgent care slots and an after-hours nurse line.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="contact section" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">Get In Touch</span>
+          <h2 id="contact-heading" class="section-title">We're Here For You</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info reveal-up">
+            <div class="contact-card">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h3>Our Location</h3>
+                <p>123 Wellness Avenue, Health City<br>HC 90210, United States</p>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.64 3.18 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6.91 6.91l.81-.81a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <h3>Phone</h3>
+                <p><a href="tel:+18005550227">+1 (800) 555-CARE</a><br><small>Emergency: <a href="tel:+18005550228">+1 (800) 555-EMRG</a></small></p>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <h3>Email</h3>
+                <p><a href="mailto:contact@harmonyclinic.com">contact@harmonyclinic.com</a></p>
+              </div>
+            </div>
+            <div class="contact-card hours-card">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <h3>Clinic Hours</h3>
+                <table class="hours-table">
+                  <tbody>
+                    <tr><td>Mon – Fri</td><td>8:00 AM – 8:00 PM</td></tr>
+                    <tr><td>Saturday</td><td>9:00 AM – 5:00 PM</td></tr>
+                    <tr><td>Sunday</td><td>Emergency Only</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- Contact Form -->
+          <div class="contact-form-wrap reveal-up">
+            <form class="contact-form" id="contact-form" novalidate>
+              <h3>Send Us a Message</h3>
+              <div class="form-group">
+                <label for="cf-name">Full Name</label>
+                <input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="cf-email">Email</label>
+                <input type="email" id="cf-email" name="email" placeholder="your@email.com" required autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="cf-subject">Subject</label>
+                <input type="text" id="cf-subject" name="subject" placeholder="How can we help?" />
+              </div>
+              <div class="form-group">
+                <label for="cf-msg">Message</label>
+                <textarea id="cf-msg" name="message" rows="4" placeholder="Your message…" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg w-full">Send Message</button>
+            </form>
+          </div>
+        </div>
+        <!-- Map placeholder -->
+        <div class="map-wrap reveal-up" aria-label="Clinic location on map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.3099585565885!2d-74.00594368459418!3d40.71270437933044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2sFulton%20St%2C%20New%20York%2C%20NY%2010038!5e0!3m2!1sen!2sus!4v1616519869797!5m2!1sen!2sus"
+            width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Harmony Family Clinic location">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo logo-light" aria-label="Harmony Family Clinic home">
+            <div class="logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L12 22M2 12L22 12"/></svg></div>
+            <div class="logo-text"><span class="logo-name">Harmony</span><span class="logo-sub">Family Clinic</span></div>
+          </a>
+          <p>Providing compassionate and comprehensive healthcare services for every stage of life.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook" class="social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter / X" class="social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">General Consultation</a></li>
+            <li><a href="#services">Child Healthcare</a></li>
+            <li><a href="#services">Women's Health</a></li>
+            <li><a href="#services">Vaccinations</a></li>
+            <li><a href="#services">Health Checkups</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#doctors">Our Doctors</a></li>
+            <li><a href="#why-us">Why Choose Us</a></li>
+            <li><a href="#resources">Health Resources</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-contact-list">
+            <li><a href="tel:+18005550227">+1 (800) 555-CARE</a></li>
+            <li><a href="mailto:contact@harmonyclinic.com">contact@harmonyclinic.com</a></li>
+            <li>123 Wellness Ave, Health City</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Harmony Family Clinic. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating CTA -->
+  <a href="#book" class="floating-cta" id="floating-cta" aria-label="Book Appointment">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    <span>Book Now</span>
+  </a>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
